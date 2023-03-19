@@ -48,6 +48,7 @@ class Post(db.Model):
             raise ValueError('Please provide a title')
         elif title not in bait_list:
         # elif not any(bait in title for bait in bait_list):
+        # ^this is Generator Expression which is more memory efficient!!!!!
             raise ValueError('Please provide a clickbait-y title')
         return title
     
